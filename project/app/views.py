@@ -1,6 +1,8 @@
 from django.shortcuts import render
-
+from . import models
 # Create your views here.
 
 def home(request):
-    return render(request, "app/index.html")
+    consulta_clientes = models.Cliente.objects.all()
+    context = {"clientes": consulta_clientes}
+    return render(request, "app/index.html", context)

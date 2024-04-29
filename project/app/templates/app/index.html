@@ -8,5 +8,16 @@
 <body>
     <h1>Cliente</h1>
 
+    {%for cliente in clientes%}
+        <h2>{{ cliente.nombre }}</h2>
+        <p>{{ cliente.apellido }}</p>
+        <p>{{ cliente.nacimiento }}</p>
+        {% if  %}
+            <p>{{ cliente.pais_origen_id }}</p>
+        {% else %}
+            <p>No registra pais de origen</p>
+        {% endif %}
+    {%endfor%}
+
 </body>
 </html>
