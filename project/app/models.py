@@ -3,10 +3,13 @@ from django.db import models
 # Create your models here.
 
 class Pais(models.Model):
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50, verbose_name="pais")
 
     def __str__(self):
         return self.nombre
+    
+    class meta:
+        verbose_name_plural = "Paises"
 
 class Cliente(models.Model):
     nombre = models. CharField(max_length=50)
@@ -17,5 +20,3 @@ class Cliente(models.Model):
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
     
-    class meta:
-        verbose_name_plural = "Paises"
