@@ -20,7 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("cliente/", include("app.urls"))
+    path("cliente/", include("app.urls")),
+    path("producto/", include("producto.urls"))
     # path('saludo/',views.saludo ),
     # path('segunda_vista/', views.segunda_vista),
     # path('nombre/<nombre>/<apellido>', views.nombre),
