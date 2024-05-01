@@ -1,10 +1,61 @@
+
 {% extends 'core/base.html' %}
+{% load static %}
 {% block titulo %}
-    Mi negocio
+
 {% endblock  %}
 
 {% block contenido %}
-    <a href="{% url 'app:home' %}">Ir a clientes</a>
-    <a href="{% url 'producto:home' %}">Ir a productos</a>
+
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src={% static "core/assets/health.jpeg" %} alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Bienvenido a nuestra Clínica Virtual</h1>
+                    <p>
+                        En nuestra era digital, el acceso a la atención médica nunca ha sido tan fácil y conveniente. En nuestra Clínica Virtual, estamos comprometidos a proporcionarte la mejor atención médica desde la comodidad de tu hogar o lugar de trabajo. Con un equipo de profesionales altamente capacitados y tecnología de vanguardia, estamos aquí para atender tus necesidades de salud de manera segura, eficiente y accesible.
+                        <br/>
+                        En nuestra plataforma en línea, puedes programar consultas médicas, obtener recetas médicas y realizar seguimiento de tu historial de salud, todo con solo unos pocos clics. Nuestra misión es brindarte la atención médica que mereces, sin importar dónde te encuentres ni a qué hora lo necesites.
+                        <br/>
+                        ¡Únete a nuestra comunidad de pacientes y descubre una nueva forma de cuidar tu salud en nuestra Clínica Virtual!</p>
+                    <a class="btn btn-primary" href={% url 'app:home' %}>¡Registrate!</a>
+                    <a class="btn btn-primary" href={% url 'producto:home' %}>¡Consulta!</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card One</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card Two</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card Three</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+            </div>
+
 {% endblock contenido %}
 
