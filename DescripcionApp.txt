@@ -1,0 +1,20 @@
+En esta app vamos a hacer una simulacion de clinica digital
+
+En home una breve descripcion general de la clinica con una imagen
+
+Registro paciente: en esta se puede registrar una historia clinica basica
+    nombre 
+    apellido
+    sexo 
+    fecha de nacimiento
+    enfermedades base
+    tipo de consulta que requiere (consulta general, revision examenes, psicologia) boton desplegable
+    guardar
+    pedir cita (segun la consulta un numero de wpp distinto)
+
+Consultar paciente
+
+href={% static "core/assets/favicon.ico" %}
+
+
+
