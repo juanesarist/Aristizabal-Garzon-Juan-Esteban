@@ -4,6 +4,9 @@ comision: 54135
 
 alumno: Juan Esteban Aristizabal Garzon
 
+user_admin: admin
+password: 123
+
 ## Acerca del proyecto
 
 Este proyecto consta de una pagina en la cual se puede registrar tanto personal q trabaja en una clinica como pacientes de la clinica
