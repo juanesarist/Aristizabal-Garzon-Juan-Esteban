@@ -21,12 +21,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("core.urls")),
-    path("cliente/", include("app.urls")),
-    path("producto/", include("producto.urls"))
-    # path('saludo/',views.saludo ),
-    # path('segunda_vista/', views.segunda_vista),
-    # path('nombre/<nombre>/<apellido>', views.nombre),
-    # path('probando_template/', views.probando_template),
-    # path('probando_template2/', views.probando_template2)
+    path("registro/", include("app.urls")),
     
 ]

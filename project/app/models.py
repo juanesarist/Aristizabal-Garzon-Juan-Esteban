@@ -2,22 +2,49 @@ from django.db import models
 
 # Create your models here.
 
-class Pais(models.Model):
-    nombre = models.CharField(null = True, max_length=50, verbose_name="pais")
 
+
+class Pacientes(models.Model):
+    nombre = models. CharField(max_length=50, null=True)
+    apellido = models.CharField(max_length=50, null=True)
+    cedula = models.IntegerField(null=True)
+    nacimiento = models.DateField(null=True)
+    pais_origen = models.CharField(max_length=50, null=True, verbose_name="Pais de origen")
+    names = (("Hombre","Hombre"),("Mujer","Mujer"))
+    sexo = models.CharField(max_length= 50, choices=names, null=True)
+    tipo_consulta = (("Consulta general","Consulta general"), ("Revision examenes","Revision examenes"), ("Psicologia","Psicologia"))
+    consulta = models.CharField(max_length= 200, choices=tipo_consulta, null=True)
+    descripcion = models.CharField(max_length=250, null=True)
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre}, {self.apellido}"
     
-    class meta:
-        verbose_name_plural = "Paises"
-
-class Cliente(models.Model):
+class Medicos(models.Model):
     nombre = models. CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     cedula = models.IntegerField(null=True)
     nacimiento = models.DateField(null=True)
-    pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL,blank=True, null=True, verbose_name="Pais de origen")
-
+    pais_origen = models.CharField(max_length=50, null=True, verbose_name="Pais de origen")
+    estudios = (("Medicina","Medicina"),("",""))
+    profesion = models.CharField(max_length= 50, choices=estudios, null=True)
+    especialidad = models.CharField(max_length= 50, null=True)
+    names = (("Hombre","Hombre"),("Mujer","Mujer"))
+    sexo = models.CharField(max_length= 50, choices=names, null=True)
+    descripcion = models.CharField(max_length=250, null=True)
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
     
+class PersonalAdm(models.Model):
+    nombre = models. CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    cedula = models.IntegerField(null=True)
+    nacimiento = models.DateField(null=True)
+    pais_origen = models.CharField(max_length=50, null=True, verbose_name="Pais de origen")
+    profesion = models.CharField(max_length= 100, null=True)
+    cargo = models.CharField(max_length= 50, null=True)
+    names = (("Hombre","Hombre"),("Mujer","Mujer"))
+    sexo = models.CharField(max_length= 50, choices=names, null=True)
+    descripcion_puesto = models.CharField(max_length=250, null=True)
+    def __str__(self):
+        return f"{self.nombre}, {self.apellido}"
+    
+
