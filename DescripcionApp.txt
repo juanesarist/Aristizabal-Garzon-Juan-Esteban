@@ -14,7 +14,7 @@ Registro paciente: en esta se puede registrar una historia clinica basica
 
 Consultar paciente
 
-href={% static "core/assets/favicon.ico" %}
+
 
 
 
