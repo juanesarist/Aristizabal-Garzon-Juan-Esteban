@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+<h1>Informacion de Pacientes</h1>    
+{% endblock titulo %}
+
+{% block contenido %}
+
+
+
+    <div class="py-lg-4 ">
+        <ul>
+
+                    <div class="col-md-6 mb-7">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ paciente.nombre }} {{ paciente.apellido }}</h4 >
+                                <p class="card-text">
+                                    Nacimiento: {{ paciente.nacimiento }}<br/>
+                                    Cedula:  {{ paciente.cedula }}  <br/> 
+                                    Pais de origen: {{ paciente.pais_origen }}<br/> 
+                                    Sexo: {{ paciente.sexo }}<br/> 
+                                    Tipo de consulta: {{ paciente.consulta }}<br/> 
+                                    Descripcion: {{ paciente.descripcion }}<br/> 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+        </ul>
+    </div>
+    <div class="fs-3 pb-4 ">
+        <a href="{% url 'app:home' %}">Volver</a>
+    </div>
+
+
+{% endblock contenido %}
+

@@ -4,24 +4,25 @@
 {% endblock titulo %}
 
 {% block contenido %}
-{%for paciente in pacientes%}
 
-    <div class="col-md-6 mb-7">
-        <div class="card h-100">
-            <div class="card-body">
-                <h4 class="card-title">{{ paciente.nombre }} {{ paciente.apellido }}</h4 >
-                <p class="card-text">
-                    Nacimiento: {{ paciente.nacimiento }}<br/>
-                    Cedula:  {{ paciente.cedula }}  <br/> 
-                    Pais de origen: {{ paciente.pais_origen }}<br/> 
-                    Sexo: {{ paciente.sexo }}<br/> 
-                    Tipo de consulta: {{ paciente.consulta }}<br/> 
-                    Descripcion: {{ paciente.descripcion }}<br/> 
-                </p>
-            </div>
-        </div>
+
+
+    <div class="py-lg-4 ">
+        <form action="{% url 'app:home' %}" method="get">
+            <input type="text" name="consulta" placeholder="Cedula del paciente">
+        </form>
+        <ul>
+            {% for paciente in pacientes  %}
+                <li>
+                    {{ paciente.cedula }} 
+                    {{ paciente.nombre }}
+                    <a href="{% url 'app:mostrar_pacientes_detail' paciente.id %}">  Informacion</a>
+                    <a href="{% url 'app:mostrar_pacientes_update' paciente.id %}">  Actualizar info</a>
+                    <a href="{% url 'app:mostrar_pacientes_delete' paciente.id %}">  Borrar</a>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 
-{%endfor%}
 {% endblock contenido %}
 

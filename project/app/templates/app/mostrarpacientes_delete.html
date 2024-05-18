@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    <h1>Actualizar informacion de pacientes</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<p class="fs-5 fst-italic ">¿Confirmar eliminar "{{ paciente.nombre }}"?</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-danger ">Confimar</button>
+
+    </form>
+    <div class="fs-3 pb-4 ">
+        <a href="{% url 'app:home' %}">Volver</a>
+    </div>
+
+{% endblock contenido %}
