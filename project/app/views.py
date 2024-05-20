@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -58,6 +59,14 @@ class buscar_pacientes(ListView):
      model = models.Pacientes
      context_object_name = "pacientes"
      template_name = "app/mostrarpacientes.html"
+
+     def get_queryset(self):
+        if self.request.GET.get("consulta"):
+               consulta = self.request.GET.get("consulta")
+               pacientes = models.Pacientes.objects.filter(cedula__icontains=consulta)
+        else:
+          pacientes = models.Pacientes.objects.all()
+        return pacientes
 
 
 # def buscar_pacientes_info(request, pk):
