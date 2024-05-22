@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from . import models, forms
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -55,7 +56,7 @@ def personal_adm(request):
 #      context = {"pacientes": query}
 #      return render(request, "app/mostrarpacientes.html", context)
 
-class buscar_pacientes(ListView):
+class buscar_pacientes(LoginRequiredMixin, ListView):
      model = models.Pacientes
      context_object_name = "pacientes"
      template_name = "app/mostrarpacientes.html"
@@ -73,12 +74,12 @@ class buscar_pacientes(ListView):
 #      query = models.Pacientes.objects.get(id=pk)
 #      return render(request, "app/mostrarpacientes_detail.html", {"paciente":query})
 
-class buscar_pacientes_info(DetailView):
+class buscar_pacientes_info(LoginRequiredMixin, DetailView):
      model = models.Pacientes
      context_object_name = "paciente"
      template_name = "app/mostrarpacientes_detail.html"
 
-class pacientes_create(CreateView):
+class pacientes_create(LoginRequiredMixin, CreateView):
      model = models.Pacientes
      form_class = forms.pacienteForm
      template_name = "app/registropacientes.html"
@@ -96,7 +97,7 @@ class pacientes_create(CreateView):
 
 #     return render(request, "app/registropacientes.html", context = {"form":form})
 
-class buscar_pacientes_update(UpdateView):
+class buscar_pacientes_update(LoginRequiredMixin, UpdateView):
      model = models.Pacientes
      form_class = forms.pacienteForm
      template_name = "app/registropacientes.html"
@@ -121,7 +122,7 @@ class buscar_pacientes_update(UpdateView):
 #         return redirect("app:home")
 #     return render(request, "app/mostrarpacientes_delete.html", context = {"paciente":query})
 
-class buscar_pacientes_delete(DeleteView):
+class buscar_pacientes_delete(LoginRequiredMixin, DeleteView):
     model = models.Pacientes
     template_name = "app/mostrarpacientes_delete.html"
     success_url = reverse_lazy("app:buscar_pacientes")
