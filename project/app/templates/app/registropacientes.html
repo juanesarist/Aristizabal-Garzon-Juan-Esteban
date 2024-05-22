@@ -1,7 +1,17 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
+
+    {% if form.instance.pk %}
+    <h1>Editar informacion de pacientes</h1>
+
+    {% else %}
+        
     <h1>Registro de pacientes</h1>
+
+    {% endif %}
+
+    
 {% endblock titulo %}
 
 {% block contenido %}
