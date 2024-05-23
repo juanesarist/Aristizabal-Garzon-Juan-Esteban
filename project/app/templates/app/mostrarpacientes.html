@@ -7,26 +7,38 @@
 
 
 
-    <div class="py-lg-4 ">
-        <form action="{% url 'app:buscar_pacientes' %}" method="get">
-            <input type="text" name="consulta" placeholder="Cedula del paciente">
-        </form>
-        <ul>
-            {% for paciente in pacientes  %}
-                <li>
-                    {{ paciente.cedula }} 
-                    {{ paciente.nombre }}
-                    <a href="{% url 'app:mostrar_pacientes_detail' paciente.id %}">  Informacion</a>
-                    <a href="{% url 'app:mostrar_pacientes_update' paciente.id %}">  Actualizar info</a>
-                    <a href="{% url 'app:mostrar_pacientes_delete' paciente.id %}">  Borrar</a>
-                </li>
+<div class="py-lg-4">
+    <form action="{% url 'app:buscar_pacientes' %}" method="get">
+        <input type="text" name="consulta" placeholder="Cedula del paciente">
+        <button type="submit">Buscar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in pacientes %}
+                <tr>
+                    <td>{{ paciente.cedula }}</td>
+                    <td>{{ paciente.nombre }}</td>
+                    <td>
+                        <a href="{% url 'app:mostrar_pacientes_detail' paciente.id %}">Información</a> |
+                        <a href="{% url 'app:mostrar_pacientes_update' paciente.id %}">Actualizar info</a> |
+                        <a href="{% url 'app:mostrar_pacientes_delete' paciente.id %}">Borrar</a>
+                    </td>
+                </tr>
             {% endfor %}
-        </ul>
-    </div>
+        </tbody>
+    </table>
+</div>
 
-    <div >
-        <a href="{% url 'core:home' %}" ><button>Volver</button></a>
-    </div>
+<div>
+    <a href="{% url 'core:home' %}"><button>Volver</button></a>
+</div>
 
 {% endblock contenido %}
 

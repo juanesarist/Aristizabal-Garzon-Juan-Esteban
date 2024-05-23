@@ -17,10 +17,12 @@
                                 <p class="card-text">
                                     Nacimiento: {{ paciente.nacimiento }}<br/>
                                     Cedula:  {{ paciente.cedula }}  <br/> 
+                                    Telefono:  {{ paciente.telefono }}  <br/> 
                                     Pais de origen: {{ paciente.pais_origen }}<br/> 
                                     Sexo: {{ paciente.sexo }}<br/> 
                                     Tipo de consulta: {{ paciente.consulta }}<br/> 
                                     Descripcion: {{ paciente.descripcion }}<br/> 
+                                    <a class="btn btn-primary" href="https://wa.me/{{ paciente.telefono}}?text=¡Hola!%20¿Cómo%20estás%3F">Contactar paciente</a>
                                 </p>
                             </div>
                         </div>
