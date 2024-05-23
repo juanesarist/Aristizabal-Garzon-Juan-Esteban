@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    <h1>About Us</h1>
+    <h2>Mi nombre es Juan Esteban Aristizabal Garzon</h2>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<p class="fs-5">
+    Soy ingeniero mecanico especialista en Diseño integrado de sistemas tecnicos egresado de la Universidad Eafit en Colombia.
+    En esta especializacion y durante la carrera aprendimos bastante de programacion en otros lenguajes y mas que todo enfcada 
+    a la automatizacion y control de procesos.
+</p>
+    
+<p class="fs-5">
+    Debido a lo aprendido en la carrera me interese en aprender mas sobre programacion en python con sus diferentes enfoques.
+</p>
+
+<div >
+    <a href="{% url 'core:home' %}" ><button>Volver</button></a>
+</div>
+
+    
+
+{% endblock contenido %}
