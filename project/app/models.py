@@ -18,33 +18,6 @@ class Pacientes(models.Model):
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
     
-class Medicos(models.Model):
-    nombre = models. CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    cedula = models.IntegerField(null=True)
-    nacimiento = models.DateField(null=True)
-    pais_origen = models.CharField(max_length=50, null=True, verbose_name="Pais de origen")
-    estudios = (("Medicina","Medicina"),("",""))
-    profesion = models.CharField(max_length= 50, choices=estudios, null=True)
-    especialidad = models.CharField(max_length= 50, null=True)
-    names = (("Hombre","Hombre"),("Mujer","Mujer"))
-    sexo = models.CharField(max_length= 50, choices=names, null=True)
-    descripcion = models.CharField(max_length=250, null=True)
-    def __str__(self):
-        return f"{self.nombre}, {self.apellido}"
-    
-class PersonalAdm(models.Model):
-    nombre = models. CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    cedula = models.IntegerField(null=True)
-    nacimiento = models.DateField(null=True)
-    pais_origen = models.CharField(max_length=50, null=True, verbose_name="Pais de origen")
-    profesion = models.CharField(max_length= 100, null=True)
-    cargo = models.CharField(max_length= 50, null=True)
-    names = (("Hombre","Hombre"),("Mujer","Mujer"))
-    sexo = models.CharField(max_length= 50, choices=names, null=True)
-    descripcion_puesto = models.CharField(max_length=250, null=True)
-    def __str__(self):
-        return f"{self.nombre}, {self.apellido}"
+
     
 
